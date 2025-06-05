@@ -1,6 +1,7 @@
 import express from "express";
 
 import "dotenv/config";
+import * as db from "./db/index.js";
 
 const requestHandler = express();
 
@@ -12,6 +13,7 @@ requestHandler.listen(port, () => {
   });
 
 
-requestHandler.get("/api/v1/get-template", (req, res) => {
-    res.send("Hello World!");
+requestHandler.get("/api/v1/bookLog", async (req, res) => {
+    const dbResponse = await db.query("select * from books limit 5");
+    res.send(dbResponse);
   });
