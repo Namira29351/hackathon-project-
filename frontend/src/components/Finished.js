@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Finished.css';
 
-import bookwormIcon from './assets/bookworm.png';
+import bookwormIcon from '../assets/bookworm.png';
 import { Link } from 'react-router-dom';
 
 
@@ -12,6 +12,10 @@ function Finished() {
         const stored = localStorage.getItem('books');
         return stored ? JSON.parse(stored) : [];
 });
+
+
+
+
 
 
 // handleDelete removes the book at the given position from your list and updates the list to show the change.

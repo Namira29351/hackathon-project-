@@ -1,6 +1,6 @@
 import React from 'react';
-import bookImage from'./assets/book.png';
-import bookwormIcon from './assets/bookworm.png';
+import bookImage from'../assets/book.png';
+import bookwormIcon from '../assets/bookworm.png';
 import './Home.css';
 import {Link} from 'react-router-dom';
 
