@@ -14,6 +14,10 @@ function Finished() {
 });
 
 
+
+
+
+
 // handleDelete removes the book at the given position from your list and updates the list to show the change.
 //takes index(tells it which book to remove), then create new list (setbook = new list)
     const handleDelete = (indexToDelete) => {
