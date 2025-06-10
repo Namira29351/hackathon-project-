@@ -2,7 +2,7 @@ import React, { useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 import './AddBook.css';
 
-import bookwormIcon from './assets/bookworm.png';
+import bookwormIcon from '../assets/bookworm.png';
 
 function AddBook() {
     const [formData, setFormData] = useState({

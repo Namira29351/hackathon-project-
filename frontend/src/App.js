@@ -1,10 +1,10 @@
 import './App.css';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import Home from './Home';
-import Finished from './Finished';
-import Unfinished from './Unfinished';
-import AddBook from './AddBook';
-import About from './About';
+import Home from './components/Home';
+import Finished from './components/Finished';
+import Unfinished from './components/Unfinished';
+import AddBook from './components/AddBook';
+import About from './components/About';
 
 function App() {
   return (

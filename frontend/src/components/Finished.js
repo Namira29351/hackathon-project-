@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Finished.css';
 
-import bookwormIcon from './assets/bookworm.png';
+import bookwormIcon from '../assets/bookworm.png';
 import { Link } from 'react-router-dom';
 
 
