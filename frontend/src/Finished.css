@@ -1,0 +1,113 @@
+.finished-container {
+    background-color: #fffdd0;
+    min-height: 100vh;
+    padding: 40px;
+    font-family: "Lato", sans-serif;
+    justify-content: center;
+}
+
+
+
+.add-button {
+    margin: 0 auto 20px;
+    display: block;
+    padding: 10px 20px;
+    background-color: #d2673c;
+    color:white;
+    border: none;
+    border-radius: 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 2px 4px 8px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.add-button:hover {
+    background-color: #f1a94e;
+
+}
+
+.books-table {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
+}
+
+.books-table th, .books-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #add;
+}
+
+.books-table th {
+    background-color: #d2673c;
+    color: white;
+    font-weight: bold;
+}
+
+.books-table tr:hover {
+    background-color: #ffeecb;
+}
+
+.delete-button {
+    padding: 6px 12px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.delete-button:hover {
+    background-color: #c0382b;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+.home-button {
+    position: absolute;
+    left:0;
+    top:50%;
+    transform: translateY(-50%);
+    padding: 10px 20px;
+    background-color: #d2673c;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    box-shadow: 2px 4px 8px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease;
+}
+
+.home-button:hover {
+    background-color: #f1a94e;
+}
+
+.home-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.title-row {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    position: relative;
+    margin-bottom: 20px;
+
+}
