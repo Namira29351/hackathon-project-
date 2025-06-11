@@ -6,6 +6,7 @@ import Unfinished from './components/Unfinished';
 import AddBook from './components/AddBook';
 import About from './components/About';
 
+
 function App() {
   return (
     <Router>
@@ -15,6 +16,7 @@ function App() {
         <Route path="/unfinished" element={<Unfinished />} />
         <Route path="/add" element={<AddBook />} />
         <Route path="/about" element={<About />} />
+        <Route path="/unfinished" element={<Unfinished />} />
       </Routes>
     </Router>
   );

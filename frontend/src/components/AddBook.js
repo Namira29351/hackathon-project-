@@ -10,6 +10,7 @@ function AddBook() {
         title: '',
         author: '',
         rating: '',
+        finished: false,
     });
 
     const navigate = useNavigate();
@@ -23,12 +24,31 @@ function AddBook() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const savedBooks = JSON.parse(localStorage.getItem('books')) || [];
-        const updatedBooks = [...savedBooks, formData];
-        localStorage.setItem('books', JSON.stringify(updatedBooks));
-        alert('Book added successfully!  📚  Happy Reading! ');
-        navigate('/finished');
-    }
+
+        fetch("http://localhost:3006/api/v1/add", {
+            method: "POST",
+            headers: {
+                "content-type": "application/json",
+            },
+            body: JSON.stringify({
+                Genre: formData.genre,
+                Title: formData.title,
+                Author: formData.author,
+                Rating: formData.rating,
+                Finished: formData.finished,
+            }),
+        })
+        .then((res) => {
+            if (!res.ok) throw new Error("Failed to add a new book");
+            alert('Book added successfully!  📚  Happy Reading! ');
+            navigate('/finished');
+        })
+        .catch((err) => {
+            console.error(err);
+            alert("Error: Couldn't add a book");
+        });
+
+    };
 
     return (
         <div className='add-book-container'>
@@ -63,6 +83,17 @@ function AddBook() {
                 </label>
 
                 <button type="submit" className='submit-button'>Submit</button>
+                <label>
+                    Finished:
+                    <input
+                        type="checkbox"
+                        name='finished'
+                        checked={formData.finished}
+                        onChange={(e) =>
+                            setFormData({...formData, finished: e.target.checked})
+                        }
+                        />
+                </label>
             </form>
 
         </div>
