@@ -13,7 +13,7 @@ requestHandler.listen(port, () => {
   });
 
 
-requestHandler.get("/api/v1/bookLog", async (req, res) => {
-    const dbResponse = await db.query("select * from books limit 5");
+requestHandler.get("/api/v1/finished", async (req, res) => {
+    const dbResponse = await db.query("SELECT * FROM books WHERE finished = true");
     res.send(dbResponse);
   });
