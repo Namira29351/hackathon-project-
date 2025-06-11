@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Finished.css';
 
 import bookwormIcon from '../assets/bookworm.png';
@@ -7,11 +7,20 @@ import { Link } from 'react-router-dom';
 
 function Finished() {
 
-//Dummy DATA FOR TABLE
-    const [books, setBooks] = useState(() => {
-        const stored = localStorage.getItem('books');
-        return stored ? JSON.parse(stored) : [];
-});
+//state var(list of books), setbooks(tool to update that list)
+// [] = don't run again unless component is destroyed & reloaded
+const [books, setBooks] = useState([]);
+
+useEffect(() => {
+    fetch("http://localhost:3006/api/v1/finished")
+    .then((res) => res.json())
+    .then((data) => {
+        setBooks(data);
+    })
+    .catch((err) => {
+        console.error("Failed to fetch books from database:", err);
+    });
+}, []);
 
 
 
@@ -19,12 +28,12 @@ function Finished() {
 
 
 // handleDelete removes the book at the given position from your list and updates the list to show the change.
-//takes index(tells it which book to remove), then create new list (setbook = new list)
+//takes index(tells it which book to remove), then create new list (setbooks = new list)
     const handleDelete = (indexToDelete) => {
 
         const updatedBooks = books.filter((_, index) => index !== indexToDelete);
         setBooks(updatedBooks);
-        localStorage.setItem('books', JSON.stringify(updatedBooks));
+  
     };
 
 
@@ -70,10 +79,10 @@ function Finished() {
                     {books.map((book, index) =>(
                         <tr key={index}>
                             <td>{index + 1}</td>
-                            <td>{book.genre}</td>
-                            <td>{book.title}</td>
-                            <td>{book.author}</td>
-                            <td>{book.rating}</td>
+                            <td>{book.Genre}</td>
+                            <td>{book.Title}</td>
+                            <td>{book.Author}</td>
+                            <td>{book.Rating}</td>
                             <td>
                                 <button className='delete-button' onClick={() => handleDelete(index)}>
                                     Delete
