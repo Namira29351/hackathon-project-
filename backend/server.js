@@ -26,7 +26,10 @@ requestHandler.use("/api/v1", booksRoutes);
 requestHandler.post("/api/v1/add", async (req, res) => {
     console.log(req.body);
     try {
-        const results = await db.query("INSERT INTO books (genre, title, author, rating, finished) values ($1, $2, $3, $4) returning *", [req.body.Genre, req.body.Title, req.body.Author, req.body.Rating, req.body.Finished]);
+        const results = await db.query(
+            "INSERT INTO books (genre, title, author, rating, finished) values ($1, $2, $3, $4, $5) returning *",
+            [req.body.Genre, req.body.Title, req.body.Author, req.body.Rating, req.body.Finished]
+        );
         console.log(results);
         res.status(201).json({
             status: "success",
@@ -36,7 +39,5 @@ requestHandler.post("/api/v1/add", async (req, res) => {
         });
     } catch (err) {
         console.log(err);
-
     }
-
 });
