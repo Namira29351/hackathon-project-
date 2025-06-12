@@ -27,7 +27,7 @@ requestHandler.post("/api/v1/add", async (req, res) => {
     console.log(req.body);
     try {
         const results = await db.query(
-            "INSERT INTO books (genre, title, author, rating, finished) values ($1, $2, $3, $4, $5) returning *",
+            "INSERT INTO books (genre, title, author, rating, finished) values ($1, $2, $3, $4, $5) RETURNING *",
             [req.body.Genre, req.body.Title, req.body.Author, req.body.Rating, req.body.Finished]
         );
         console.log(results);
@@ -40,4 +40,15 @@ requestHandler.post("/api/v1/add", async (req, res) => {
     } catch (err) {
         console.log(err);
     }
+});
+
+
+requestHandler.delete("/api/v1/delete", async (req, res) => {
+  try {
+    const result = await db.query("DELETE FROM books WHERE title = $1", [req.body.title]);
+    res.status(200).json({message: "Book deleted"});
+  } catch (err) {
+    console.error("Delete failed:", err);
+    res.status(500).json({error: "Couldnt delete book"});
+  }
 });

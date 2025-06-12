@@ -16,9 +16,10 @@ function AddBook() {
     const navigate = useNavigate();
 
     const handleChange = (e) => {
+        const { name, value, type, checked } = e.target;
         setFormData({
             ...formData,
-            [e.target.name]: e.target.value,
+            [name]: type === 'checkbox' ? checked : value,
         });
     };
 
@@ -52,7 +53,7 @@ function AddBook() {
 
     return (
         <div className='add-book-container'>
-<div className="title-row">
+        <div className="title-row">
         <h1 className="title-text">
             <span style={{ fontWeight: 'normal', fontFamily: 'Times New Roman, serif', fontSize: '5rem'}}>Book</span>
             <span style={{ fontWeight: 'bold', fontFamily: 'Lato', fontSize: '5rem'}}>Worm</span>
@@ -82,18 +83,19 @@ function AddBook() {
                     <input type="text" name="rating" value={formData.rating} onChange={handleChange} required />
                 </label>
 
-                <button type="submit" className='submit-button'>Submit</button>
+               
                 <label>
                     Finished:
                     <input
                         type="checkbox"
                         name='finished'
                         checked={formData.finished}
-                        onChange={(e) =>
-                            setFormData({...formData, finished: e.target.checked})
-                        }
+                        onChange={handleChange}
                         />
                 </label>
+
+                <button type="submit" className='submit-button'>Submit</button>
+                
             </form>
 
         </div>

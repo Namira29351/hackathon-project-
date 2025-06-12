@@ -30,9 +30,25 @@ useEffect(() => {
 // handleDelete removes the book at the given position from your list and updates the list to show the change.
 //takes index(tells it which book to remove), then create new list (setbooks = new list)
     const handleDelete = (indexToDelete) => {
+        const bookToDelete = books[indexToDelete];
 
-        const updatedBooks = books.filter((_, index) => index !== indexToDelete);
-        setBooks(updatedBooks);
+        fetch(`http://localhost:3006/api/v1/delete`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ title: bookToDelete}),
+        })
+        .then((res) => {
+            if (!res.ok) throw new Error("failed to delete your book");
+            const updatedBooks = books.filter((_, index) => index !== indexToDelete);
+            setBooks(updatedBooks);
+            alert("Book Deleted");
+        })
+        .catch((err) => {
+            console.error("Error for deleting book:", err);
+            alert("couldn't delete book");
+        });
   
     };
 
@@ -42,7 +58,7 @@ useEffect(() => {
 
 <div className="title-row">
 <Link to="/" className='home-link'>
-            <button className='home-button'>Back to Home</button>
+            <button className='home-button'>Back to Home Page 🏠</button>
             </Link>
 
 
@@ -76,6 +92,7 @@ useEffect(() => {
                     </tr>
                 </thead>
                 <tbody>
+                    
                     {books.map((book, index) =>(
                         <tr key={index}>
                             <td>{index + 1}</td>

@@ -22,7 +22,7 @@ function Unfinished() {
         <div className="finished-container">
            <div className='title-row'>
             <Link to="/" className='home-link'>
-                <button className='home-button'>Home 🏠 </button>
+                <button className='home-button'>Back to Home Page 🏠 </button>
             </Link>
 
             <h1 className="title-text">
