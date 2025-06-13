@@ -13,17 +13,17 @@ function Home() {
 
         <div className="title-row">
             <Link to="/about" className='about-link'>
-            <button className='about-button'>About the Developers</button>
+            <button className='about-button'>About the Developers 👥</button>
             </Link>
 
-            
+        <div className='title-group'>
         <h1 className="title-text">
             <span style={{ fontWeight: 'normal', fontFamily: 'Times New Roman, serif', fontSize: '5rem'}}>Book</span>
             <span style={{ fontWeight: 'bold', fontFamily: 'Lato', fontSize: '5rem'}}>Worm</span>
         </h1>
             <img src={bookwormIcon} alt="Bookworm Icon" className="title-image" />
         </div>
-
+        </div>
 
         <img src={bookImage} alt="Book" style={{ width: '250px', marginTop: '5x'}} />
 

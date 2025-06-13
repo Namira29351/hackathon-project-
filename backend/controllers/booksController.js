@@ -32,3 +32,15 @@ export const getUnfinished = async (req, res ) => {
 };
 
 
+
+export const deleteBook = async (req, res) => {
+  try {
+    const {title} = req.body;
+    await db.query("DELETE FROM books WHERE title = $1", [title]);
+    res.status(200).json({message: "Book deleted"});
+  } catch (error) {
+    console.error("Error in deleting book:", error);
+    res.status(500).json({error: "Failed to delete book"});
+  }
+};
+

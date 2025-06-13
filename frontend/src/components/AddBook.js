@@ -4,6 +4,8 @@ import './AddBook.css';
 
 import bookwormIcon from '../assets/bookworm.png';
 
+import {Link} from 'react-router-dom';
+
 function AddBook() {
     const [formData, setFormData] = useState({
         genre: '',
@@ -54,6 +56,12 @@ function AddBook() {
     return (
         <div className='add-book-container'>
         <div className="title-row">
+            <Link to="/" className= "home-link">
+                <button className='home-button'>Back to Home Page 🏠</button>
+            </Link>
+    
+
+
         <h1 className="title-text">
             <span style={{ fontWeight: 'normal', fontFamily: 'Times New Roman, serif', fontSize: '5rem'}}>Book</span>
             <span style={{ fontWeight: 'bold', fontFamily: 'Lato', fontSize: '5rem'}}>Worm</span>
@@ -95,7 +103,7 @@ function AddBook() {
                 </label>
 
                 <button type="submit" className='submit-button'>Submit</button>
-                
+
             </form>
 
         </div>

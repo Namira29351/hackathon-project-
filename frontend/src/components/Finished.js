@@ -37,7 +37,7 @@ useEffect(() => {
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({ title: bookToDelete}),
+            body: JSON.stringify({ title: bookToDelete.Ttitle}),
         })
         .then((res) => {
             if (!res.ok) throw new Error("failed to delete your book");

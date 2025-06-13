@@ -39,10 +39,10 @@
     position: relative;
     display:flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     gap: 20px;
     flex-wrap: wrap;
-    margin-bottom: 20px;
+    width: 100%;
 
 }
 
@@ -90,4 +90,31 @@ h1 {
 .about-link {
     text-decoration: none;
     color: inherit;
+}
+
+
+
+.home-button {
+    padding: 10px 20px;
+    background-color: #d2673c;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 2px 4px 8px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease;
+}
+
+.home-button:hover {
+    background-color: #f1a94e;
+}
+
+
+.title-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: 0 auto;
 }

@@ -18,6 +18,34 @@ function Unfinished() {
         });
     }, []);
 
+
+
+
+const handleDelete = (indexToDelete, bookTitle) => {
+    fetch(`http://localhost:3006/api/v1/delete`, {
+        method: 'DELETE',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ title: bookTitle}),
+    })
+    .then((res) => {
+        if (!res.ok) {
+            throw new Error('Failed to delete da book');
+        }
+
+
+//This part used to update da book list in frontend
+        const updatedBooks = books.filter((_, index) => index !== indexToDelete);
+        setBooks(updatedBooks);
+    })
+    .catch((err) => {
+        console.error('Error deleting da book:', err);
+        alert('Couldnt delete book from database');
+    });
+};
+
+
     return (
         <div className="finished-container">
            <div className='title-row'>
@@ -25,10 +53,18 @@ function Unfinished() {
                 <button className='home-button'>Back to Home Page 🏠 </button>
             </Link>
 
+
+
+
+
             <h1 className="title-text">
                 <span style={{ fontWeight: 'normal', fontFamily: 'Times New Roman, serif', fontSize: '5rem'}}>Book</span>
                 <span style={{ fontWeight: 'bold', fontFamily: 'Lato', fontSize: '5rem'}}>Worm</span>
             </h1>
+
+
+
+
 
             <img src={bookwormIcon} alt="Bookworm Icon" className='title-image'   />
            </div>
@@ -44,7 +80,7 @@ function Unfinished() {
                         <th>Genre</th>
                         <th>Title</th>
                         <th>Author</th>
-                        <th>Rating ⭐</th>
+                        <th>Delete ❌</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -54,7 +90,14 @@ function Unfinished() {
                             <td>{book.Genre}</td>
                             <td>{book.Title}</td>
                             <td>{book.Author}</td>
-                            <td>{book.Rating}</td>
+
+                        <td>
+                            <button
+                            className="delete-button"
+                            onClick={() => handleDelete(index, book.Title)}>
+                                Delete
+                            </button>
+                        </td>
                         </tr>
                     ))}
                 </tbody>
