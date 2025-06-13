@@ -56,19 +56,19 @@ const handleDelete = (indexToDelete, bookTitle) => {
 
 
 
-
+<div className='title-group'>
             <h1 className="title-text">
                 <span style={{ fontWeight: 'normal', fontFamily: 'Times New Roman, serif', fontSize: '5rem'}}>Book</span>
                 <span style={{ fontWeight: 'bold', fontFamily: 'Lato', fontSize: '5rem'}}>Worm</span>
             </h1>
-
+            
 
 
 
 
             <img src={bookwormIcon} alt="Bookworm Icon" className='title-image'   />
            </div>
-
+           </div>
 
            <h1 style={{ fontFamily: 'Lato, sans-serif', textAlign: 'center'}}>Unfinished Books</h1>
 

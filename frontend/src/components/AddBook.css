@@ -87,3 +87,11 @@
     height: auto;
     margin-left: 10px;
 }
+
+.title-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: 0 auto;
+}

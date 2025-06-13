@@ -16,13 +16,15 @@ function About() {
                 <button className='home-button'>Back to Home 🏠</button>
             </Link>
 
-
+            <div className='title-group'>
             <h1 className='about-title'>
                 About the <span className='bold-word'>developers</span>
             </h1>
 
             <img src={bookWorm} alt="Book" className='about-book-image' />
            </div>
+           </div>
+
 
            <div className='guy-images'>
             <img src={guy} alt="Developer Left" className='guy-image left' />
@@ -31,17 +33,17 @@ function About() {
 
 
            <div className='about-text-box'>
-            <h3>Welcome to BookWorm!</h3>
-            <p>
+            <h2>Welcome to BookWorm!</h2>
+            <h3>
                 We're just two guys with a crazy idea, readers, and coders who believe that every story matters.
                 What if we could help others better track and enjoy their reading journey?
 
-            </p>
-            <h3>
-                Who We Are
             </h3>
+            <h2>
+                Who We Are
+            </h2>
 
-            <p> BookWorm was built with passion and collaboration through GitHub and vsCode. Inspired by books, legos and roblox to give  every reader a structured and fun way to explore books.</p>
+            <h3> BookWorm was built with passion and collaboration through GitHub and Visual Studio Code. Inspired by books, legos and roblox to give  every reader a structured and fun way to explore books.</h3>
 
            </div>
         </div>

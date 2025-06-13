@@ -112,3 +112,12 @@ a {
     margin-bottom: 20px;
 
 }
+
+
+.title-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin: 0 auto;
+}
