@@ -1,10 +1,14 @@
 import React, {useEffect, useState } from 'react';
 import './Finished.css'; //To reuse the table and buttons etc
-import bookwormIcon from '../assets/bookworm.png';
+import bookwormIcon from '../pictures/bookworm.png';
 import { Link } from 'react-router-dom';
 
 function Unfinished() {
 
+
+
+//fetches the list of unfini. books from backend Api 
+// the data is then stored in the books state var., if fails catch err
     const [books, setBooks] = useState([]);
 
     useEffect(() => {
@@ -21,6 +25,9 @@ function Unfinished() {
 
 
 
+
+// deletes a book from backend database, sending delete req. with book title
+//indexToDelete: the index of the book in the local list/ then bookTitle (title of book thats to be deleted)
 const handleDelete = (indexToDelete, bookTitle) => {
     fetch(`http://localhost:3006/api/v1/delete`, {
         method: 'DELETE',
@@ -35,7 +42,8 @@ const handleDelete = (indexToDelete, bookTitle) => {
         }
 
 
-//This part used to update da book list in frontend
+//This part removes the deleted book from da local 'books' state to then update da UI.
+// also filters out the book at the specified index then update the state
         const updatedBooks = books.filter((_, index) => index !== indexToDelete);
         setBooks(updatedBooks);
     })
@@ -72,6 +80,8 @@ const handleDelete = (indexToDelete, bookTitle) => {
 
            <h1 style={{ fontFamily: 'Lato, sans-serif', textAlign: 'center'}}>Unfinished Books</h1>
 
+
+
            <div className='table-wrapper'>
             <table className='books-table'>
                 <thead>
@@ -84,7 +94,9 @@ const handleDelete = (indexToDelete, bookTitle) => {
                     </tr>
                 </thead>
                 <tbody>
+                    
                     {books.map((book, index) => (
+//renders a table row for each book in da 'books' array. 
                         <tr key={index}>
                             <td>{index + 1}</td>
                             <td>{book.Genre}</td>

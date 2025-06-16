@@ -2,11 +2,17 @@ import React, { useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 import './AddBook.css';
 
-import bookwormIcon from '../assets/bookworm.png';
+import bookwormIcon from '../pictures/bookworm.png';
 
 import {Link} from 'react-router-dom';
 
+
+
+
+
 function AddBook() {
+
+// initializes the form state for adding a new book(used to manage the form input values)
     const [formData, setFormData] = useState({
         genre: '',
         title: '',
@@ -15,8 +21,10 @@ function AddBook() {
         finished: false,
     });
 
+
     const navigate = useNavigate();
 
+//handles form input changes by updatikng the corresponding field in 'formData' state
     const handleChange = (e) => {
         const { name, value, type, checked } = e.target;
         setFormData({
@@ -25,6 +33,7 @@ function AddBook() {
         });
     };
 
+    //handles form submission for adding a new book & prevents default form behavior, sends a post req with form data to da backend.
     const handleSubmit = (e) => {
         e.preventDefault();
 
@@ -70,8 +79,9 @@ function AddBook() {
         </div>
         </div>
 
-        
+
             <h1>Add a Book! 📖 </h1>
+            
             <form onSubmit={handleSubmit} className='add-book-form'>
                 <label>
                     Genre:
@@ -89,6 +99,7 @@ function AddBook() {
                 </label>
 
                 <label>
+            
                     Rating:
                     <input type="text" name="rating" value={formData.rating} onChange={handleChange} required />
                 </label>
@@ -97,6 +108,7 @@ function AddBook() {
                 <label>
                     Finished:
                     <input
+                    //submitting the form calls handleSubmit, then proceses the dataa without reloading the page
                         type="checkbox"
                         name='finished'
                         checked={formData.finished}

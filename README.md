@@ -24,10 +24,10 @@ Checking off the box for the 'finished' section determines whether the book goes
 4. After you have all the dependencies and set up the clone, open two terminals on your device. Then cd into backend on one terminal and cd into frontend on the other terminal. Use npm start on both to run the application.
 
 ## Preview
-![alt text](<frontend/src/assets/Screenshot 2025-06-12 at 5.40.59 PM.png>)
+![alt text](<frontend/src/pictures/Screenshot 2025-06-12 at 5.40.59 PM.png>)
 
-![alt text](<frontend/src/assets/Screenshot 2025-06-12 at 5.41.21 PM.png>)
+![alt text](<frontend/src/pictures/Screenshot 2025-06-12 at 5.41.21 PM.png>)
 
-![alt text](<frontend/src/assets/Screenshot 2025-06-12 at 5.41.36 PM.png>)
+![alt text](<frontend/src/pictures/Screenshot 2025-06-12 at 5.41.36 PM.png>)
 
-![alt text](<frontend/src/assets/Screenshot 2025-06-12 at 5.42.00 PM.png>)
+![alt text](<frontend/src/pictures/Screenshot 2025-06-12 at 5.42.00 PM.png>)

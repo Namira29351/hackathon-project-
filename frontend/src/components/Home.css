@@ -1,3 +1,5 @@
+
+/* the main container for the home page layout css to make it look nicer*/
 .home-container {
     background-color: #fffdd0;
     min-height: 100vh;
@@ -7,7 +9,7 @@
 }
 
 
-
+/*  the navigation group aligned horizontally */
 .button-group {
     display: flex;
     justify-content: center;
@@ -15,7 +17,7 @@
 }
 
 
-
+/* the css styles for the navigation buttons */
 .nav-button {
     
     padding: 15px 30px;
@@ -30,11 +32,16 @@
 
 }
 
+
+
+/* Pointer cool hover effect for the buttons */
 .nav-button:hover {
     background-color: #f1a94e;
     box-shadow: 2px 6px 12px rgba(0,0,0,0.25);
 }
 
+
+/* This is the row title section, aligns title and image*/
 .title-row {
     position: relative;
     display:flex;
@@ -46,6 +53,8 @@
 
 }
 
+
+
 .title-text {
     margin:0;
 }
@@ -56,17 +65,20 @@
 
 
 
-
+/* text styling for the main head title*/
 .title-text {
     margin: 0;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
 
 }
 
+/* Heading style with a small shadow  */
 h1 {
     text-shadow: 1.5px 1.5px 3px rgba(0,0,0,0.2);
 }
 
+
+/* css for the about button */
 .about-button {
     position: absolute;
     left: 0;
@@ -87,6 +99,8 @@ h1 {
     background-color: #f1a94e;
 }
 
+
+/* this helped remove a purple underline for the about-link*/
 .about-link {
     text-decoration: none;
     color: inherit;
@@ -110,7 +124,7 @@ h1 {
     background-color: #f1a94e;
 }
 
-
+/* group for title elements, centered layout */
 .title-group {
     display: flex;
     align-items: center;

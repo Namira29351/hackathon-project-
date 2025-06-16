@@ -1,7 +1,7 @@
 import React from 'react';
 import './Home.css';
-import bookWorm from'../assets/bookworm.png';
-import guy from '../assets/Guy2.png';
+import bookWorm from'../pictures/bookworm.png';
+import guy from '../pictures/Guy2.png';
 import './About.css';
 
 import { Link } from 'react-router-dom';

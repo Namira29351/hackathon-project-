@@ -6,7 +6,7 @@ import Unfinished from './components/Unfinished';
 import AddBook from './components/AddBook';
 import About from './components/About';
 
-
+// all routes 
 function App() {
   return (
     <Router>

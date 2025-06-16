@@ -7,7 +7,7 @@
 }
 
 
-
+/*Button for adding a new book, this is centered */
 .add-button {
     margin: 0 auto 20px;
     display: block;
@@ -28,6 +28,8 @@
 
 }
 
+
+/* the table layout for displaying finished books */
 .books-table {
     width: 100%;
     max-width: 800px;
@@ -38,18 +40,20 @@
     overflow: hidden;
     box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
 }
-
+/* Table cell and header styling  */
 .books-table th, .books-table td {
     padding: 15px;
     text-align: left;
     border-bottom: 1px solid #add;
 }
-
+/* the table header row css */
 .books-table th {
     background-color: #d2673c;
     color: white;
     font-weight: bold;
 }
+
+
 
 .books-table tr:hover {
     background-color: #ffeecb;
@@ -70,6 +74,8 @@
     background-color: #c0382b;
 }
 
+
+/* this part also helped remove that weird underline for all links*/
 a {
     text-decoration: none;
     color: inherit;
@@ -113,7 +119,7 @@ a {
 
 }
 
-
+/* group for title elements, centers and spaces them  */
 .title-group {
     display: flex;
     align-items: center;

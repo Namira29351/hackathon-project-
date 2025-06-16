@@ -7,7 +7,7 @@
 
 }
 
-
+/* the form css for adding a new book: vertical layout, centered, with spacing and a small shadow*/
 .add-book-form {
     display: flex;
     flex-direction: column;
@@ -21,7 +21,7 @@
     box-shadow: 0px 4px 15px rgba(0,0,0,0.1);
 }
 
-
+/* the lables inside the form*/
 .add-book-form label {
     width: 100%;
     text-align: left;
@@ -29,7 +29,7 @@
 
 }
 
-
+/*input fields inside of da form */
 .add-book-form input {
     width: 100%;
     padding: 10px;
@@ -41,7 +41,7 @@
 
 
 
-
+/*submit button css*/
 .submit-button {
     padding: 10px;
     background-color: #d2673c;
@@ -75,6 +75,8 @@
 
 }
 
+
+/* title row layout*/
 .title-row {
     display: flex;
     align-items: center;
@@ -88,6 +90,8 @@
     margin-left: 10px;
 }
 
+
+/* Group of the title elements making sure things are centered*/
 .title-group {
     display: flex;
     align-items: center;
